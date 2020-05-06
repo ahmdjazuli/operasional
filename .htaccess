@@ -1,0 +1,72 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+#DirectoryIndex 404ErrorPage.html (Redirect Index)
+#Options All-Indexes
+
+ErrorDocument 404 /baramarta/404ErrorPage.html
+ErrorDocument 401 /baramarta/404ErrorPage.html
+ErrorDocument 402 /baramarta/404ErrorPage.html
+ErrorDocument 403 /baramarta/404ErrorPage.html
+ErrorDocument 400 /baramarta/404ErrorPage.html
+
+ErrorDocument 500 /baramarta/404ErrorPage.html
+ErrorDocument 501 /baramarta/404ErrorPage.html
+ErrorDocument 502 /baramarta/404ErrorPage.html
+ErrorDocument 503 /baramarta/404ErrorPage.html
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+# MITRA
+RewriteRule ^admin/mitra_nama_cv_([^/\.]+)?$ admin/mitra.php?urut=nama_cv&pola=$1 [L]
+RewriteRule ^admin/mitra_alamat_([^/\.]+)?$ admin/mitra.php?urut=alamat&pola=$1 [L]
+RewriteRule ^admin/mitra_telp_([^/\.]+)?$ admin/mitra.php?urut=telp&pola=$1 [L]
+
+# STOKPILE
+RewriteRule ^admin/stokpile_kode_lahan_([^/\.]+)?$ admin/stokpile.php?urut=kode_lahan&pola=$1 [L]
+RewriteRule ^admin/stokpile_stok_([^/\.]+)?$ admin/stokpile.php?urut=stok&pola=$1 [L]
+
+# KONTRAK
+RewriteRule ^admin/kontrak_no_kontrak_([^/\.]+)?$ admin/kontrak.php?urut=no_kontrak&pola=$1 [L]
+RewriteRule ^admin/kontrak_nama_cv_([^/\.]+)?$ admin/kontrak.php?urut=nama_cv&pola=$1 [L]
+RewriteRule ^admin/kontrak_bagihasil_([^/\.]+)?$ admin/kontrak.php?urut=bagihasil&pola=$1 [L]
+RewriteRule ^admin/kontrak_stok_([^/\.]+)?$ admin/kontrak.php?urut=stok&pola=$1 [L]
+RewriteRule ^admin/kontrak_tanggal_([^/\.]+)?$ admin/kontrak.php?urut=tanggal&pola=$1 [L]
+RewriteRule ^admin/kontrak_tanggal1_([^/\.]+)?$ admin/kontrak.php?urut=tanggal1&pola=$1 [L]
+
+# TRUK
+RewriteRule ^admin/truk_kode_truk_([^/\.]+)?$ admin/truk.php?urut=kode_truk&pola=$1 [L]
+RewriteRule ^admin/truk_nama_cv_([^/\.]+)?$ admin/truk.php?urut=nama_cv&pola=$1 [L]
+RewriteRule ^admin/truk_daya_angkut_([^/\.]+)?$ admin/truk.php?urut=daya_angkut&pola=$1 [L]
+RewriteRule ^admin/truk_nopolisi_([^/\.]+)?$ admin/truk.php?urut=nopolisi&pola=$1 [L]
+RewriteRule ^admin/truk_merk_([^/\.]+)?$ admin/truk.php?urut=merk&pola=$1 [L]
+
+# TRANSAKSI
+RewriteRule ^admin/transaksi_no_([^/\.]+)?$ admin/transaksi.php?urut=no_transaksi&pola=$1 [L]
+RewriteRule ^admin/transaksi_nama_cv_([^/\.]+)?$ admin/transaksi.php?urut=nama_cv&pola=$1 [L]
+RewriteRule ^admin/transaksi_tonase_([^/\.]+)?$ admin/transaksi.php?urut=tonase&pola=$1 [L]
+RewriteRule ^admin/transaksi_harga_([^/\.]+)?$ admin/transaksi.php?urut=harga&pola=$1 [L]
+RewriteRule ^admin/transaksi_surveyor_([^/\.]+)?$ admin/transaksi.php?urut=surveyor&pola=$1 [L]
+RewriteRule ^admin/transaksi_tanggal_([^/\.]+)?$ admin/transaksi.php?urut=tanggal&pola=$1 [L]
+
+# PRODUKSI
+RewriteRule ^admin/produksi_no_([^/\.]+)?$ admin/produksi.php?urut=no_produksi&pola=$1 [L]
+RewriteRule ^admin/produksi_truk_([^/\.]+)?$ admin/produksi.php?urut=kode_truk&pola=$1 [L]
+RewriteRule ^admin/produksi_lahan_([^/\.]+)?$ admin/produksi.php?urut=kode_lahan&pola=$1 [L]
+RewriteRule ^admin/produksi_kosong_([^/\.]+)?$ admin/produksi.php?urut=kosong&pola=$1 [L]
+RewriteRule ^admin/produksi_muatan_([^/\.]+)?$ admin/produksi.php?urut=muatan&pola=$1 [L]
+RewriteRule ^admin/produksi_tgl_([^/\.]+)?$ admin/produksi.php?urut=tgl&pola=$1 [L]
+RewriteRule ^admin/produksi_shift_([^/\.]+)?$ admin/produksi.php?urut=shift&pola=$1 [L]
+RewriteRule ^admin/produksi_volume_([^/\.]+)?$ admin/produksi.php?urut=volume&pola=$1 [L]
+
+# KIRIM
+RewriteRule ^admin/kirim_nosurat_([^/\.]+)?$ admin/kirim.php?urut=nosurat&pola=$1 [L]
+RewriteRule ^admin/kirim_truk_([^/\.]+)?$ admin/kirim.php?urut=kode_truk&pola=$1 [L]
+RewriteRule ^admin/kirim_lahan_([^/\.]+)?$ admin/kirim.php?urut=kode_lahan&pola=$1 [L]
+RewriteRule ^admin/kirim_batubara_([^/\.]+)?$ admin/kirim.php?urut=batubara&pola=$1 [L]
+RewriteRule ^admin/kirim_tgl_([^/\.]+)?$ admin/kirim.php?urut=tanggal_kirim&pola=$1 [L]
+RewriteRule ^admin/kirim_lokasi_([^/\.]+)?$ admin/kirim.php?urut=lokasi&pola=$1 [L]
+
+</IfModule>
