@@ -22,3 +22,4 @@ Fitur Website :
 8. Multi CRUD
 9. User (Admin aja)
 10. Enkripsi password pake Hash
+11. Ada Error Pagenya
