@@ -21,3 +21,4 @@ Fitur Website :
 7. Format Tanggal Indonesia
 8. Multi CRUD
 9. User (Admin aja)
+10. Enkripsi password pake Hash
